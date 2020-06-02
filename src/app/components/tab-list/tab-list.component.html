@@ -1,0 +1,50 @@
+<div class="summary">
+  <div class="item item-1">
+    <label for="campaign-group">Campaign Group</label>
+    <span id="campaign-group">{{ campaignGroup?.name }}</span>
+  </div>
+
+  <div class="item item-2">
+    <label for="campaign-name">Campaign Name</label>
+    <span id="campaign-name">{{ campaigns[0]?.name }}</span>
+  </div>
+
+  <div class="item item-3">
+    <label for="account-progress">Account Progress</label>
+    <span id="account-progress"
+      >0 out of {{ campaigns.length }} Campaigns Analyzed</span
+    >
+  </div>
+  <div class="item item-4">
+    <button class="btn">Continue</button>
+  </div>
+</div>
+
+<div class="tab-container">
+  <div *ngFor="let item of items; let i = index">
+    <div class="sidenav">
+      <div class="tab" [ngClass]="selectedItem.value === ('tab' + i)? 'selected': ''">
+        <input type="radio" name="vtab" [formControl]="selectedItem" [value]="'tab' + i" [id]="'tab' + i" />
+        <label [for]="'tab' + i">{{ item.name }}</label>
+      </div>
+
+      <div *ngIf="selectedItem.value === ('tab' + i)" class="container" [id]="'content' + i">
+        <div class="instructions">
+          <h1>Instructions</h1>
+          <div class="" *ngFor="let variant of item.itemVariants">
+            <div class="" [innerHTML]="variant.description"></div>
+          </div>
+        </div>
+
+        <div class="optimization">
+          <h1>Optimizations</h1>
+          <div class="actionRow" *ngFor="let action of item.actions">
+            <input type="checkbox" />
+            <p>{{ action.name }}</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

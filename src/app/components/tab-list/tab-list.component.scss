@@ -1,0 +1,75 @@
+.actionRow {
+  display: flex;
+  align-items: center;
+}
+
+.summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #0c8fec;
+  color: white;
+
+  .item {
+    margin-right: 15px;
+
+    label {
+      opacity: 0.5;
+    }
+
+    span {
+      display: block;
+    }
+
+    .btn {
+      padding: 8px 18px 8px 18px;
+      border-radius: 5px;
+    }
+  }
+}
+
+
+
+.tab-container {
+  position: relative;
+  margin-top: 50px;
+
+
+}
+
+.container {
+  position: absolute;
+  top: -50px;
+  left: 250px;
+  padding: 15px;
+  margin-top: 20px;
+  width: calc(100% - 250px);
+  background-color: white;
+  box-shadow: -4px 5px 8px #00000008;
+  min-height: 70vh;
+
+  .instructions {
+    max-height: 50vh;
+    overflow-y: auto;
+  }
+}
+
+.tab {
+  padding: 25px;
+  max-width: 200px;
+  opacity: 0.3;
+  color: #14375F;
+
+  &.selected {
+    background-color: white;
+    opacity: 1;
+    border-left: 4px solid #55ACEC ;
+  }
+
+  input {
+    display: none;
+  }
+}
+
+
